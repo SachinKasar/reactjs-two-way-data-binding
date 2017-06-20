@@ -1,20 +1,20 @@
 import React from "react";
 import {render} from "react-dom";
 
-import {TwoWheel} from "./components/TwoWheel";
-import {FourWheel} from "./components/FourWheel";
+import {TwoWheeler} from "./components/TwoWheeler";
+import {FourWheeler} from "./components/FourWheeler";
 
 class App extends React.Component {
 	constructor () {
 		super()
 		this.state = {
-			visitor:'XYZ'
+			visitor:'Visitor 1'
 		}
 		this.handleVisitor = this.handleVisitor.bind(this);
 	}
 	
 	greetCustomer() {
-		alert("Hello");		
+		alert("Hello");	
 	}
 	
 	handleVisitor(name) {
@@ -24,15 +24,15 @@ class App extends React.Component {
 	}
 	
     render() {
-		var twoWheelSpecs = {manufacturer : "Royal Enfield"};
-		var fourWheelSpecs = {manufacturer : "Maruti Suzuki"};
+		let twoWheelSpecs = {manufacturer : "Royal Enfield"};
+		let fourWheelSpecs = {manufacturer : "Maruti Suzuki"};
 		
         return ( 
-			<div>
+			<div style={{border: '5px solid grey'}}>
 				 <div className="container">
 					<div className="row">
 						<div className="row">
-							<TwoWheel 
+							<TwoWheeler 
 							       name="Enfield Classic" 
 								   specs={twoWheelSpecs} 
 								   price="0" ariom
@@ -46,7 +46,7 @@ class App extends React.Component {
 				  <div className="container">
 					<div className="row">
 						<div className="row">
-							<FourWheel 
+							<FourWheeler 
 								name="Grand Vitara" 
 								specs={fourWheelSpecs} 
 								visitor={this.state.visitor}/>
