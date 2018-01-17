@@ -13,9 +13,7 @@ class App extends React.Component {
 		this.handleVisitor = this.handleVisitor.bind(this);
 	}
 	
-	greetCustomer() {
-		alert("Hello");	
-	}
+	 
 	
 	handleVisitor(name) {
 		this.setState({
@@ -28,24 +26,22 @@ class App extends React.Component {
 		let fourWheelSpecs = {manufacturer : "Maruti Suzuki"};
 		
         return ( 
-			<div style={{border: '5px solid grey'}}>
-				 <div className="container">
-					<div className="row">
-						<div className="row">
+			<div className="container">
+                <div className="row col-xs-10 col-xs-offset-1 alert alert-success">
+				    <br/>   
+                    <div className="row">
+                      <div className="col-xs-10 col-xs-offset-1" >
 							<TwoWheeler 
 							       name="Enfield Classic" 
 								   specs={twoWheelSpecs} 
-								   price="0" ariom
-								   greet={this.greetCustomer} 
-								   visitor={this.state.visitor}
+								   price="0"  
+								   initvisitor={this.state.visitor}
 								   changeVisitor={this.handleVisitor}/>
 						</div>
-					</div>
-				  </div>
-			  <hr/>
-				  <div className="container">
-					<div className="row">
-						<div className="row">
+					</div> <br/>
+            
+				   <div className="row">
+                      <div className="col-xs-10 col-xs-offset-1" >
 							<FourWheeler 
 								name="Grand Vitara" 
 								specs={fourWheelSpecs} 
@@ -53,7 +49,7 @@ class App extends React.Component {
 						</div>
 					</div>
 				  </div>
-			  </div>
+            </div>
         );
     } 
 }
